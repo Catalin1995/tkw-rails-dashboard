@@ -1,8 +1,8 @@
 # Change these
 server '192.168.0.242', roles: [:web, :app, :db], primary: true
 
-set :repo_url,        'git@github.com:Catalin1995/rails-app-template.git'
-set :application,     'rails-app-template'
+set :repo_url,        'git@github.com:Catalin1995/tkw-rails-dashboard.git'
+set :application,     'tkw-rails-dashboard'
 set :user,            'ionutmuresan'
 set :puma_threads,    [4, 16]
 set :puma_workers,    0

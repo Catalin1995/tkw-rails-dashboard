@@ -9,7 +9,7 @@ gem 'capistrano-rvm'
 
 # gem 'whenever'
 
-#gem 'tkw-ldap', :git => 'git@gitlab.st.st2k.ro:ionut.muresan/tkw-ldap.git'
+gem 'tkw-ldap', :git => 'git@gitlab.st.st2k.ro:ionut.muresan/tkw-ldap.git'
 
 gem 'jira-ruby', '~> 0.1.18'
 
