@@ -1,0 +1,72 @@
+<div id="home-slide">
+    <div class="row">
+        <div class="tile col-sm-4">
+            <div class="tile-content">
+                <div class="card handy" ng-click="goto('projects')">
+                    <figure class="front">
+                        <h1>{{json.report.onTrackProjects}}</h1>
+                        <p>Active projects</p>
+                    </figure>
+                </div>
+            </div>
+        </div>
+        <div class="tile col-sm-4" ng-class="{ 'big-warn': (json.report.codeReviewProjects / json.report.onTrackProjects) < 50, 'warn': (json.report.codeReviewProjects / json.report.onTrackProjects) < 75 }">
+            <div class="tile-content">
+                <div class="card handy" ng-click="goto('projects/code_review')">
+                    <figure class="front">
+                        <h1>{{ (json.report.codeReviewProjects / json.report.onTrackProjects) | percentage }}</h1>
+                        <p>Code Review</p>
+                    </figure>
+                </div>
+            </div>
+        </div>
+        <div class="tile col-sm-4">
+            <div class="tile-content">
+                <div class="card handy" ng-click="goto('tecknoworkers')">
+                    <figure class="front">
+                        <h1>{{json.employeeCount}}</h1>
+                        <p>Tecknoworkers</p>
+                    </figure>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="tile big-warn col-sm-4">
+            <div class="tile-content">
+                <div class="card">
+                    <figure class="front">
+                        <h1>20</h1>
+                        <p>Open positions</p>
+                    </figure>
+                </div>
+            </div>
+        </div>
+        <div class="tile col-sm-4">
+            <div class="tile-content">
+                <div class="card">
+                    <figure class="front">
+                        <h1>400</h1>
+                        <p>BHAG</p>
+                    </figure>
+                </div>
+            </div>
+        </div>
+        <div class="tile warn col-sm-4" toggle-class="flipped">
+            <div class="tile-content">
+                <div class="card handy" ng-click="goto('/customers')">
+                    <figure class="front">
+                        <h1>3 / 9</h1>
+                        <p>2016 Customers</p>
+                    </figure>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="second-slide">
+    <div class="img {{classes}}" style="background-image: url({{image}})">
+    </div>
+</div>

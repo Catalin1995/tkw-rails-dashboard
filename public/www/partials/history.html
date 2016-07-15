@@ -1,0 +1,37 @@
+<div class="row">
+    <div class="col-md-12">
+        <h1>History</h1>
+    </div>
+</div>
+
+<div ng-repeat="(year, value) in data">
+    <div class="row">
+        <div class="col-md-12">
+            <h2 class="text-center"> {{year}} </h2>
+        </div>
+    </div>
+    <table class="table table-hover">
+        <tr>
+            <th class="text-center">Week</th>
+            <th class="text-center">Code Review </th>
+            <th class="text-center">First day of week</th>
+            <th class="text-center">Last day of week</th>
+            <th class="text-center">Progress</th>
+        </tr>
+        <tr ng-repeat="(key, week) in value" class="text-center">
+            <td><a href="#/projects/code_review/history/week/{{key}}/year/{{year}}">{{key}}</a></td>
+            <td>{{last(week.days)[last(week.days).length - 1].codeReviewProjects /
+                last(week.days)[last(week.days).length - 1].onTrackProjects | percentage }}</td>
+                <td>{{week.first_day}}</td>
+                <td>{{week.last_day}}</td>
+                <td class="text-center">
+                    <div ng-init="rez = progress(year, key)" ng-show="rez > 0">
+                        <span class="glyphicon glyphicon-arrow-up green" aria-hidden="true"></span><span> {{rez + "%"}} </span>
+                    </div>
+                    <div ng-init="rez = progress(year, key)" ng-show="rez < 0">
+                        <span class="glyphicon glyphicon-arrow-down red" aria-hidden="true"></span><span> {{rez + "%"}} </span>
+                    </div>
+                </td>
+            </tr>
+        </table>
+    </div>

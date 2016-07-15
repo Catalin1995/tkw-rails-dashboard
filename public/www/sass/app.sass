@@ -1,0 +1,87 @@
+$accent: #ED3E86
+$text-color: #333
+$text-color-secondary: #5a5a5a
+
+@mixin no-edges
+  margin: 0px;
+  padding: 0px;
+
+[ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak
+  display: none !important
+
+*
+  font-family: 'HelveticaNeue-Thin', 'Helvetica Neue Thin', 'HelveticaNeue-Light', 'Helvetica Neue Light', 'Helvetica Neue', Helvetica, Arial, 'Lucida Grande', sans-serif !important
+
+a
+  text-decoration: none
+
+h1
+  text-align: center
+  font-size: 96px
+  font-weight: normal
+  color: $text-color
+  @include no-edges
+
+h3
+  text-align: center
+  font-size: 24px
+  font-weight: normal
+  color: $text-color
+  @include no-edges
+
+p
+  font-size: 22px
+  color: $text-color-secondary
+  text-transform: uppercase
+  text-align: center
+  @include no-edges
+
+.container-fluid, .row
+  @include no-edges
+
+.tile
+  height: 50%
+  @include no-edges
+  .tile-content
+    position: relative
+    top: 35%
+    transform: translateY(-50%)
+
+.old
+  opacity: 0.5
+
+.hidden
+  visibility: hidden
+
+.warn h1
+  color: $accent
+
+.big-warn
+  background-color: $accent
+  h1, p
+    color: white
+
+.handy
+  cursor: pointer
+  cursor: hand
+
+.card
+  width: 100%
+  height: 100%
+  position: absolute
+  transform-style: preserve-3d
+  transition: transform 1s
+  transform-origin: right center
+  figure
+    @include no-edges
+    display: block
+    position: absolute
+    width: 100%
+    height: 100%
+    backface-visibility: hidden
+  .front
+    transform: rotateY(0deg)
+  .back
+    transform: rotateY(180deg)
+  &.flipped
+    transform: translateX(-100%) rotateY(180deg)

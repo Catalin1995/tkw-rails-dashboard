@@ -1,0 +1,86 @@
+<div class="row">
+    <div class="col-md-12">
+        <h1>{{title}}</h1>
+        <a href="#/projects/code_review/history">
+            <h2 class="text-center">History Code Review</h2>
+        </a>
+    </div>
+</div>
+
+<div class="row" style="padding: 20px 0 0 15px;">
+    <div class="col-md-3">
+        <div class="form">
+            <div class="form-group">
+                <label>Filter by:</label>
+                <select class="form-control" ng-model="selectFilter" ng-change="change()">
+                    <option value="status"> Project status </option>
+                    <option value="clientStatus"> Client status </option>
+                    <option value="teamStatus"> Team status </option>
+                </select>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row" style="padding: 0 0 20px 0;">
+    <div class="col-md-6 col-sm-12">
+        <div class="row">
+            <div ng-repeat="item in statusList" class="standard" flex="50">
+                <div class="col-xs-12 col-sm-4 col-md-4">
+                    <label>
+                        <input type="checkbox" id="{{item}}" ng-checked="exists(item, selected)"
+                        ng-click="toggle(item, selected)"/>
+                        <label for="{{item}}" class="checkbox">
+                            {{ item }}
+                        </label>
+                    </label>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-3">
+
+    </div>
+</div>
+
+<table class="table table-hover">
+    <tr>
+        <th>Name</th>
+        <th>Status</th>
+        <th>Type</th>
+        <th>Clients</th>
+        <th>Leader Name</th>
+        <th>Last Activity</th>
+        <th>Code Review Tasks</th>
+    </tr>
+    <tr ng-repeat="project in filteredProjects" ng-class="{ 'hidden': !project.id, 'old': project.tkwDescription.status != 'On track', 'activeButWithoutOnTrack': project.activeButWithoutOnTrack}">
+        <td>{{project.name}}</td>
+        <td id="status-description" ng-class="{ 'white': noStatus(project.tkwDescription.status), 'stack': isStuck(project.tkwDescription.status) || isStuck(project.tkwDescription.clientStatus) || isStuck(project.tkwDescription.teamStatus) }">
+            <div class="status-info">
+                <table class="table">
+                    <tr ng-class="{'red': isStuck(project.tkwDescription.status), 'white': noStatus(project.tkwDescription.status)}">
+                        <td> <b> Project status </b> </td>
+                        <td> {{project.tkwDescription.status}} </td>
+                    </tr>
+                    <tr ng-class="{'red': isStuck(project.tkwDescription.clientStatus), 'white': noStatus(project.tkwDescription.clientStatus)}">
+                        <td> <b> Client status </b> </td>
+                        <td> {{project.tkwDescription.clientStatus}} </td>
+                    </tr>
+                    <tr ng-class="{'red': isStuck(project.tkwDescription.teamStatus), 'white': noStatus(project.tkwDescription.teamStatus)}">
+                        <td> <b> Team status </b> </td>
+                        <td> {{project.tkwDescription.teamStatus}} </td>
+                    </tr>
+                </table>
+            </div>
+            {{project.tkwDescription.status}}
+        </td>
+        <td>{{project.project_type_key}}</td>
+        <td>{{project.tkwDescription.client}}</td>
+        <td>{{project.leader_name}}</td>
+        <td>{{project.last_activity | date:'dd-MM-yyyy' }}</td>
+        <td>{{project.code_review_issue_count}}</td>
+    </tr>
+</table>

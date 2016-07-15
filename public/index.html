@@ -1,0 +1,37 @@
+<html ng-app='app'>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no" />
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+    <meta http-equiv="Pragma" content="no-cache" />
+    <meta http-equiv="Expires" content="0" />
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="www/css/app.css">
+
+    <title>Tecknoworks Dashboard</title>
+  </head>
+  <body ng-controller="MainController">
+
+    <div class="container-fluid" ng-view>
+    </div>
+
+    <script src="//cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.8/angular.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.8/angular-route.js"></script>
+
+    <script src="www/js/app.js"></script>
+
+    <script src="www/js/controllers/MainController.js"></script>
+    <script src="www/js/controllers/CodeReviewProjectsController.js"></script>
+    <script src="www/js/controllers/DashboardController.js"></script>
+    <script src="www/js/controllers/ProjectsController.js"></script>
+    <script src="www/js/controllers/CustomersController.js"></script>
+    <script src="www/js/controllers/TecknoworkersController.js"></script>
+    <script src="www/js/controllers/HistoryController.js"></script>
+    <script src="www/js/controllers/ProjectsPerWeekController.js"></script>
+  </body>
+</html>
