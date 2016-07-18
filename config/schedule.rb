@@ -1,9 +1,9 @@
 every :day, :at => '12:00am' do
-  rake "reports:updateUsers"
+  rake "reports:updateUsers RAILS_ENV=production"
 end
 
 every :day, :at => '12:00am' do
-  rake "reports:updateProjects"
+  rake "reports:updateProjects RAILS_ENV=production"
 end
 
 # Use this file to easily define all of your cron jobs.
