@@ -13,7 +13,7 @@ gem 'capistrano-rvm'
 
 gem 'jira-ruby', '~> 0.1.18'
 
-gem 'jira-cli', :git => 'git@gitlab.st.st2k.ro:cristian.messel/jira-cli.git'
+#gem 'jira-cli', :git => 'git@gitlab.st.st2k.ro:cristian.messel/jira-cli.git'
 
 #gem 'jira-cli', :git => 'git@gitlab.st.st2k.ro:cristian.messel/jira-cli.git'
 
