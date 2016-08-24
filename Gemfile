@@ -3,7 +3,7 @@ source 'https://rubygems.org'
 gem 'net-ldap'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '4.2.2'
+gem 'rails', '~> 4.2.4', git: "git://github.com/rails/rails.git", branch: '4-2-stable'
 
 gem 'capistrano-rvm'
 
@@ -19,7 +19,7 @@ gem 'jira-ruby', '~> 0.1.18'
 
 gem 'apipie-rails'
 # Use sqlite3 as the database for Active Record
-gem 'sqlite3'
+# gem 'sqlite3'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
 # Use Uglifier as compressor for JavaScript assets
@@ -48,6 +48,8 @@ gem 'activeadmin', github: 'activeadmin/activeadmin'
 
 # Use ActiveModel has_secure_password
 gem 'bcrypt', '~> 3.1.7'
+
+gem 'mysql2'
 
 # Use Unicorn as the app server
 # gem 'unicorn'
