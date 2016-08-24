@@ -15,7 +15,6 @@ set :scm, :git
 
 set :branch, "master"
 set :user, "ionutmuresan"
-set :scm_passphrase, "UbuntuServer"
 set :use_sudo, false
 set :rails_env, "production"
 set :deploy_via, :copy

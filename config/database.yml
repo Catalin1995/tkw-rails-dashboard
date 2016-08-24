@@ -28,5 +28,5 @@ test:
 production:
   <<: *default
   database: dashboard_production
-  username: ionutmuresan
+  username: root
   password: password
