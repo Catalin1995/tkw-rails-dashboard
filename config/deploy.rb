@@ -1,8 +1,8 @@
 # config valid only for current version of Capistrano
 lock '3.5.0'
 
-set :application, 'test-rails-dashboard'
-set :repo_url, 'git@github.com:Catalin1995/test-rails-dashboard.git'
+set :application, 'tkw-rails-dashboard'
+set :repo_url, 'git@github.com:Catalin1995/tkw-rails-dashboard.git'
 
 # Default branch is :master
 # ask :branch, `git rev-parse --abbrev-ref HEAD`.chomp
